@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Java Backend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">Karthikeyan</h2>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="theme-toggle" id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, I'm</h3>   
+      <h1>Karthikeyan</h1>
+      <p class="typing-text">I'm a <span></span></p>
+      <p>I’m passionate about Java backend development and enjoy building scalable, real-world applications.</p>
+
+      <div class="social-icons">
+        <a href="https://github.com/S-KARTHIKEYAN-05/Karthikeyangithub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="www.linkedin.com/in/karthikeyan-s-55371131b" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+
+      <a href="mailto:karthikeyanshivakumar@gmail.com" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-tags">
+      <span>Java</span>
+      <span>Spring Boot</span>
+      <span>C</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>Basics of JavaScript</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="font-size: 1.5rem;">
+      Email: <a href="mailto:karthikeyanshivakumar@gmail.com" style="font-weight: bold; text-decoration: none;">
+        karthikeyanshivakumar@gmail.com
+      </a>
+    </p>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-theme');
+      toggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light-theme');
+      if (body.classList.contains('light-theme')) {
+        localStorage.setItem('theme', 'light');
+        toggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('theme', 'dark');
+        toggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+  </script>
+</body>
+</html>
